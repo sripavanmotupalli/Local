@@ -136,11 +136,11 @@
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
-    <dependency>
+  <!--   <dependency>
             <groupId>com.rwsc.apps</groupId>
             <artifactId>http-global-lib</artifactId>
             <version>1.0.0</version>
-        </dependency>
+        </dependency> -->
 
         <dependency>
     <groupId>com.rabbitmq</groupId>
