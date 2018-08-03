@@ -54,6 +54,52 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${org.mule.tools.maven}</version>
+				<configuration>
+					<deploymentType>${mule.deploymentType}</deploymentType>
+					<muleVersion>${mule.version}</muleVersion>
+					<username>${mule.username}</username>
+					<password>${mule.password}</password>
+					<uri>${mule.uri}</uri>
+					<application>${mule.application}</application>
+					<applicationName>${mule.applicationName}</applicationName>
+					<businessGroup>${mule.businessGroup}</businessGroup>
+					<target>${mule.target}</target>
+					<workerType>${mule.workerType}</workerType>
+					<workers>${mule.workers}</workers>
+					<redeploy>true</redeploy>
+					<environment>${mule.environment}</environment>
+					<!-- added to support multiple regions -->
+					<region>${mule.region}</region>
+					<properties>
+						<anypoint.platform.analytics_base_uri>https://analytics-ingest.anypoint.mulesoft.com</anypoint.platform.analytics_base_uri>
+						<anypoint.platform.platform_base_uri>https://anypoint.mulesoft.com/apiplatform</anypoint.platform.platform_base_uri>
+						<anypoint.platform.coreservice_base_uri>https://anypoint.mulesoft.com/accounts</anypoint.platform.coreservice_base_uri>
+						<anypoint.platform.contracts_base_uri>https://anypoint.mulesoft.com/apigateway/ccs</anypoint.platform.contracts_base_uri>
+						<anypoint.platform.client_id>${business.group.client.id}</anypoint.platform.client_id>
+						<anypoint.platform.client_secret>${business.group.client.secret}</anypoint.platform.client_secret>
+					</properties>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy-ch</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>undeploy-ch</id>
+						<phase>undeploy</phase>
+						<goals>
+							<goal>undeploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
